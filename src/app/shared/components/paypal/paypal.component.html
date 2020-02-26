@@ -1,0 +1,10 @@
+<div #paypal></div>
+<div *ngIf="!paidOut">
+    <app-box-message *ngIf="!paidOut && paidOut !== undefined"
+        [messages]="[{text:'Algo salio mal con la compra', icon: 'error'}]" boxClass="error">
+    </app-box-message>
+    <app-box-message *ngIf="paidOutCanceled" [messages]="[{text:'Compra cancelada', icon: 'error'}]" boxClass="error">
+    </app-box-message>
+</div>
+<app-box-message *ngIf="paidOut" [messages]="[{text:'Compra exitosa', icon: 'check_circle'}]" boxClass="success">
+</app-box-message>

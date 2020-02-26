@@ -1,0 +1,94 @@
+<div class="container-fluid">
+  <p>¿Deseas dar de alta un nuevo cuestionario,
+
+    <button [routerLink]="['new']" class="btn btn-xs btn-primary">
+      <i class="fa fa-plus"></i>
+    </button></p>
+  <br>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Cuestionario</th>
+        <th>Opciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- <tr *ngFor="let item of surveyQuestList;">
+        <td>{{ item.title }}</td>
+        <td>
+          <button [routerLink]="['detail', item.Oid]" class="btn btn-xs btn-info">
+            <i class="fa fa-pencil"></i>
+          </button>
+          <button (click)="delete(item.Oid)" class="btn btn-xs btn-danger">
+            <i class="fa fa-trash"></i>
+          </button>
+        </td>
+      </tr> -->
+    </tbody>
+  </table>
+</div>
+
+<!-- <div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12 col-xl-6">
+      <div class="card">
+        <div class="card-header">
+          <h5>Basic Accordion</h5>
+        </div>
+        <div class="card-body default-accordion">
+          <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+            <ngb-panel title="Simple">
+              <ng-template ngbPanelContent>
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
+                moon officia
+                aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf
+                moon tempor,
+                sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim
+                keffiyeh helvetica,
+                craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+                Leggings
+                occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them
+                accusamus
+                labore sustainable VHS.
+              </ng-template>
+            </ngb-panel>
+            <ngb-panel>
+              <ng-template ngbPanelTitle>
+                <span>&#9733; <b>Fancy</b> title &#9733;</span>
+              </ng-template>
+              <ng-template ngbPanelContent>
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
+                moon officia
+                aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf
+                moon tempor,
+                sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim
+                keffiyeh helvetica,
+                craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+                Leggings
+                occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them
+                accusamus
+                labore sustainable VHS.
+              </ng-template>
+            </ngb-panel>
+            <ngb-panel title="Disabled" [disabled]="true">
+              <ng-template ngbPanelContent>
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
+                moon officia
+                aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf
+                moon tempor,
+                sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim
+                keffiyeh helvetica,
+                craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+                Leggings
+                occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them
+                accusamus
+                labore sustainable VHS.
+              </ng-template>
+            </ngb-panel>
+          </ngb-accordion>
+        </div>
+      </div>
+    </div>
+   
+  </div>
+</div> -->

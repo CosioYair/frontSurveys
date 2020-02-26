@@ -1,0 +1,57 @@
+<form [formGroup]="form" fxLayout="column" fxLayoutAlign="none center">
+    <mat-form-field>
+        <input matInput placeholder="Titulo" formControlName="title">
+        <mat-error *ngIf="form.controls['title'].invalid && form.controls['title'].touched">
+            Campo requerido
+        </mat-error>
+    </mat-form-field>
+    <div class="w-80 m-10" fxLayout="column" fxLayoutAlign="none center">
+        <h5>Preguntas</h5>
+        <div class="w-80" formArrayName="Questions" *ngFor="let _ of Questions.controls; let i = index;">
+            <div class="card" [formGroupName]="i">
+                <div class="card-body" fxLayout="column" fxLayoutAlign="none end">
+                    <mat-form-field>
+                        <mat-label>Pregunta</mat-label>
+                        <mat-select formControlName="questionOid">
+                            <mat-option *ngFor="let question of questions" [value]="question.Oid">
+                                {{ question.title }}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error
+                            *ngIf="Questions.controls[i].controls['questionOid'].invalid && Questions.controls[i].controls['questionOid'].touched">
+                            Campo requerido
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Categoria</mat-label>
+                        <mat-select formControlName="categoryOid">
+                            <mat-option *ngFor="let category of categories" [value]="category.Oid">
+                                {{ category.name }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Dominio</mat-label>
+                        <mat-select formControlName="domainOid">
+                            <mat-option *ngFor="let domain of domains" [value]="domain.Oid">
+                                {{ domain.name }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Dimension</mat-label>
+                        <mat-select formControlName="dimensionOid">
+                            <mat-option *ngFor="let dimension of dimensions" [value]="dimension.Oid">
+                                {{ dimension.name }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <button *ngIf="i != 0 || Questions.controls.length > 1" (click)="removeQuestion(i)" mat-icon-button color="accent">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <button (click)="addQuestion()" mat-mini-fab color="accent">+</button>
+    </div>
+</form>

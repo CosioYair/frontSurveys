@@ -1,0 +1,43 @@
+<div class="card">
+    <div class="card-header">
+        <h5>Habilitar nueva evaluación</h5>
+    </div>
+    <div class="card-body">
+        <h6>Selecciona que tipo de cuestionario quieres habilitar y el numero aleatorio de empleados que seran
+            evaluados<strong>(Cuentas con {{ employees.length }} empleados)</strong>
+        </h6>
+        <form [formGroup]="form" fxLayout="column wrap" fxLayoutAlign="space-around start">
+            <div fxFlexFill fxLayoutAlign="space-around start">
+                <mat-form-field>
+                    <mat-label>Tipo de cuestionario</mat-label>
+                    <mat-select formControlName="surveyTypeId">
+                        <mat-option *ngFor="let surveyType of surveyTypes" [value]="surveyType.id">
+                            {{ surveyType.description }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field>
+                    <input type="number" matInput placeholder="Numero de empleados" formControlName="employeesNumber">
+                    <mat-error>
+                        Cuentas con {{ employees.length }} empleados
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <mat-radio-group *ngIf="surveys.length > 0" formControlName="surveyBaseOid" fxLayout="column"
+                fxLayoutAlign="start start">
+                <mat-radio-button *ngFor="let survey of surveys" [value]="survey.Oid">
+                    <strong>{{ survey.title }}</strong>
+                </mat-radio-button>
+            </mat-radio-group>
+            <app-box-message *ngIf="surveys.length === 0" fxFlexFill
+                [messages]="[{text:'No hay cuestionarios disponibles', icon: 'error'}]" boxClass="warning">
+            </app-box-message>
+            <div fxFlexFill fxLayout="column" fxLayoutAlign="center center">
+                <app-back-error-list [errors]="backErrors"></app-back-error-list>
+                <app-success-box *ngIf="evaluationEnabled" message="Evaluación habilitada"></app-success-box>
+                <button (click)="createEvaluation()" class="btn-block" mat-stroked-button color="accent"
+                    [disabled]="!form.valid">Habilitar</button>
+            </div>
+        </form>
+    </div>
+</div>

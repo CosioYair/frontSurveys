@@ -1,0 +1,44 @@
+<div class="card">
+    <div class="card-header">
+        <h5>Suscripción</h5>
+    </div>
+    <div *ngIf="!subscriptionDetails.id" class="card-body" fxLayout="column" fxLayoutAlign="none center">
+        <mat-card class="example-card">
+            <mat-card-header>
+                <mat-card-title>Selecciona un periodo de contratación</mat-card-title>
+                <mat-card-subtitle>Realiza todas las pruebas que quieras a todas las personas que desees durante el
+                    tiempo contratado.</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <mat-radio-group [(ngModel)]="planId" fxLayout="column" fxLayoutAlign="start start">
+                    <mat-radio-button *ngFor="let plan of paypalPlans" [value]="plan.id">
+                        <strong>{{ plan.name }}</strong>
+                        <p>{{ ( plan.totalCycles * plan.value) | currency: plan.currency }}
+                            <i>({{ plan.value | currency: plan.currency }} por
+                                {{ IntervalUnit[plan.intervalUnit] }})</i></p>
+                    </mat-radio-button>
+                </mat-radio-group>
+                <button mat-stroked-button color="accent" class="btn-block" [disabled]="!planId"
+                    [routerLink]="['/user/subscription-billing', planId]">Continuar</button>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div *ngIf="subscriptionDetails.id" class="card-body" fxLayout="column" fxLayoutAlign="none center">
+        <mat-card class="example-card">
+            <mat-card-header>
+                <mat-card-title>{{ planDetails.name }} <strong>(Activo)</strong></mat-card-title>
+                <mat-card-subtitle>{{ planDetails.description }}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <mat-list>
+                    <mat-list-item>Fecha de comienzo: {{ subscriptionDetails.start_time | date }}
+                    </mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item>Fecha de termino: {{ (subscriptionDetails.billing_info ? subscriptionDetails.billing_info.final_payment_time : '') | date }}
+                    </mat-list-item>
+                    <mat-divider></mat-divider>
+                </mat-list>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

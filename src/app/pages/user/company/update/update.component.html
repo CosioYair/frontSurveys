@@ -1,0 +1,40 @@
+<div class="card">
+    <div class="card-header">
+        <h5>Datos generales</h5>
+    </div>
+    <div class="card-body">
+        <app-box-message *ngIf="!registerCompleted"
+            [messages]="[{text:'Es necesario completar tu registro', icon: 'error'}]" boxClass="warning">
+        </app-box-message>
+        <form [formGroup]="form" fxLayout="column" fxLayoutAlign="none center">
+            <mat-form-field>
+                <input matInput placeholder="Nombre de empresa" formControlName="name">
+                <mat-error *ngIf="form.controls['name'].invalid && form.controls['name'].touched">
+                    Ingresa un nombre de empresa valido
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Correo" formControlName="email">
+                <mat-error *ngIf="form.controls['email'].invalid && form.controls['email'].touched">
+                    Ingresa un correo electrónico valido
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Rfc" formControlName="rfc" oninput="this.value = this.value.toUpperCase()">
+                <mat-error *ngIf="form.controls['rfc'].invalid && form.controls['rfc'].touched">
+                    Ingresa un RFC valido
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Telefono" formControlName="phone">
+                <mat-error *ngIf="form.controls['phone'].invalid && form.controls['phone'].touched">
+                    Ingresa numero telefónico valido
+                </mat-error>
+            </mat-form-field>
+            <app-back-error-list [errors]="backErrors"></app-back-error-list>
+            <app-success-box *ngIf="companyUpdated" message="Registro actualizado"></app-success-box>
+            <button (click)="setCompany()" mat-stroked-button color="accent"
+                [disabled]="!form.valid">Actualizar</button>
+        </form>
+    </div>
+</div>

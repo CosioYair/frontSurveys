@@ -1,0 +1,22 @@
+<div class="card">
+    <div class="card-header">
+        <h5>Completa la contratación</h5>
+    </div>
+    <div class="card-body" fxLayout="column" fxLayoutAlign="none center">
+        <mat-card class="example-card">
+            <mat-card-header>
+                <mat-card-title>{{ planDetails.name }}</mat-card-title>
+                <mat-card-subtitle>{{ planDetails.description }}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <mat-list>
+                    <mat-list-item>Pago por mes: {{ planDetails.value | currency: planDetails.currency }}</mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item>Pago total: {{ ( planDetails.totalCycles * planDetails.value) | currency: planDetails.currency }}</mat-list-item>
+                    <mat-divider></mat-divider>
+                </mat-list>
+                <app-paypal [planId]="planId" (NewSubscription)="newSubscription($event)"></app-paypal>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

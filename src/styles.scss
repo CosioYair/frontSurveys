@@ -1,0 +1,92 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+$primary: #3f51b5;
+/* You can add global styles to this file, and also import other style files */
+
+body{
+  font-size: 1rem!important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $primary;
+}
+
+.w-100 {
+  width: 100% !important;
+}
+
+.w-80 {
+  width: 80% !important;
+}
+
+.m-10 {
+  margin: 100% !important;
+}
+
+.image-sm {
+  width: 150px;
+}
+
+.container {
+  height: 100%;
+  margin: 0 3%;
+}
+
+.icon-small {
+  transform: scale(0.7);
+}
+
+.icon-2x {
+  transform: scale(2);
+}
+
+.icon-3x {
+  transform: scale(3);
+}
+
+
+.info,
+.success,
+.warning,
+.error {
+  margin : 5px 0px;
+  padding: 12px;
+
+}
+
+.info {
+  color           : #00529B;
+  background-color: #BDE5F8;
+}
+
+.success {
+  color           : #4F8A10;
+  background-color: #DFF2BF;
+}
+
+.warning {
+  color           : #9F6000;
+  background-color: #FEEFB3;
+}
+
+.error {
+  color           : #D8000C;
+  background-color: #FFD2D2;
+}
+
+.info i,
+.success i,
+.warning i,
+.error i {
+  margin        : 10px 22px;
+  font-size     : 2em;
+  vertical-align: middle;
+}
+
+.p-1 {
+  padding: 3%;
+}

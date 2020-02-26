@@ -1,0 +1,26 @@
+.profile-container {
+    padding   : 1%;
+    min-height: 100%;
+
+    mat-toolbar {
+        border: 1px solid lightgrey;
+    }
+}
+
+.side-nav {
+    width: 100%;
+
+    mat-drawer,
+    div {
+        background-color: white;
+        border          : 1px solid lightgrey;
+    }
+}
+
+.list-item-active {
+    background-color: rgba(0, 0, 0, .04);
+}
+
+.menu-options {
+    min-width: 200px;
+}

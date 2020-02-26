@@ -1,0 +1,24 @@
+<div class="card">
+    <div class="card-header">
+        <h5>Mi cuenta</h5>
+    </div>
+    <div class="card-body">
+        <form [formGroup]="form" fxLayout="column" fxLayoutAlign="none center">
+            <mat-form-field>
+                <input matInput placeholder="Nombre de usuario" formControlName="tagName">
+                <mat-error *ngIf="form.controls['tagName'].invalid && form.controls['tagName'].touched">
+                    Ingresa un nombre de usuario valido
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Correo" formControlName="email">
+                <mat-error *ngIf="form.controls['email'].invalid && form.controls['email'].touched">
+                    Ingresa un correo electrónico valido
+                </mat-error>
+            </mat-form-field>
+            <app-success-box *ngIf="userUpdated" message="Registro actualizado"></app-success-box>
+            <button (click)="update()" mat-stroked-button color="accent" [disabled]="!form.valid">Actualizar</button>
+        </form>
+        <app-back-error-list [errors]="backErrors"></app-back-error-list>
+    </div>
+</div>

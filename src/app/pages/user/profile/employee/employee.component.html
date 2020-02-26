@@ -1,0 +1,60 @@
+<div class="card">
+    <div class="card-header">
+        <h5>Empleado</h5>
+    </div>
+    <div class="card-body">
+        <div fxLayout="column wrap" fxLayoutAlign="space-between start">
+            <div class="section" fxFlexFill>
+                <div fxFlex="50" fxLayout="column">
+                    <h6>Nombre completo</h6>
+                    <p>{{ employee.fullName }}</p>
+                </div>
+                <div fxFlex="50" fxLayout="column">
+                    <h6>Sexo</h6>
+                    <p>{{ gender ? gender.name : '' }}</p>
+                </div>
+            </div>
+            <div class="section" fxFlexFill>
+                <div fxFlex="50" fxLayout="column">
+                    <h6>Estado civil</h6>
+                    <p>{{ civilStatus ? civilStatus.name : '' }}</p>
+                </div>
+                <div fxFlex="50" fxLayout="column">
+                    <h6>Nivel de estudio</h6>
+                    <p>{{ studyLevel ? studyLevel.name : '' }}</p>
+                </div>
+            </div>
+            <div class="section" fxFlexFill>
+                <div fxFlex="50" fxLayout="column">
+                    <h6>Titulo de puesto</h6>
+                    <p>{{ employee.position }}</p>
+                </div>
+                <div fxFlex="50" fxLayout="column">
+                    <h6>Tipo de contrato</h6>
+                    <p>{{ contractType ? contractType.name : '' }}</p>
+                </div>
+            </div>
+            <div class="section" fxFlexFill>
+                <div fxFlex="50" fxLayout="column">
+                    <h6>Tipo de personal</h6>
+                    <p>{{ staffType ? staffType.name : '' }}</p>
+                </div>
+                <div fxFlex="50" fxLayout="column">
+                    <h6>Jornada laboral</h6>
+                    <p>{{ workingDayType ? workingDayType.name : '' }}</p>
+                </div>
+            </div>
+            <div class="section" fxFlexFill>
+                <div fxFlex="50" fxLayout="column">
+                    <h6>Rotacion</h6>
+                    <p>{{ employee.rotation ? 'Si' : 'No' }}</p>
+                </div>
+                <div fxFlex="50" fxLayout="column">
+                    <h6>Fecha de inicio en el puesto</h6>
+                    <p>{{ employee.positionStartDate | date }}</p>
+                </div>
+            </div>
+        </div>
+        <app-back-error-list [errors]="backErrors"></app-back-error-list>
+    </div>
+</div>

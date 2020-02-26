@@ -1,0 +1,61 @@
+<!-- Action Column 
+            <ng-container matColumnDef="actions">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let element">
+                    <button *ngxPermissionsOnly="['UE']" [routerLink]="['/user/company/update-employee', element.Oid]" mat-icon-button>
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                    <button *ngxPermissionsOnly="['DE']" (click)="delete(element.Oid)" mat-icon-button>
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </td>
+            </ng-container> -->
+<div class="card">
+    <div class="card-header">
+        <h5>Mis empleados</h5>
+    </div>
+    <div class="card-body">
+        <form>
+            <div class="form-group form-inline">
+                Buscar: <input class="form-control ml-2" type="text" name="searchTerm" [formControl]="filter" />
+            </div>
+
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th *ngFor="let column of displayedColumns" scope="col" (sort)="onSort($event)">
+                            {{ column.title }}</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let employee of (employees$ | async); let i = index">
+                        <th scope="row">{{ i + 1 }}</th>
+                        <td>
+                            <ngb-highlight [result]="employee.fullName"></ngb-highlight>
+                        </td>
+                        <td>
+                            <ngb-highlight [result]="employee.position"></ngb-highlight>
+                        </td>
+                        <td>
+                            <button *ngxPermissionsOnly="['UE']"
+                                [routerLink]="['/user/company/update-employee', employee.Oid]" mat-icon-button>
+                                <mat-icon>edit</mat-icon>
+                            </button>
+                            <button *ngxPermissionsOnly="['DE']" (click)="delete(employee.Oid)" mat-icon-button>
+                                <mat-icon>delete</mat-icon>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="d-flex justify-content-between p-2">
+                <ngb-pagination [collectionSize]="total" [(page)]="page" [pageSize]="pageSize" (pageChange)="pagination($event)">
+                </ngb-pagination>
+            </div>
+
+        </form>
+    </div>
+</div>

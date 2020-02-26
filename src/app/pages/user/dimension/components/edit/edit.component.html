@@ -1,0 +1,14 @@
+<form [formGroup]="form" fxLayout="column" fxLayoutAlign="none center">
+    <mat-form-field>
+        <input matInput placeholder="Nombre" formControlName="name">
+        <mat-error *ngIf="form.controls['name'].invalid && form.controls['name'].touched">
+            Campo requerido
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Descripcion" formControlName="description">
+        <mat-error *ngIf="form.controls['description'].invalid && form.controls['description'].touched">
+            Campo requerido
+        </mat-error>
+    </mat-form-field>
+</form>

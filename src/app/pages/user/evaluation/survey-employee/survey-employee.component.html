@@ -1,0 +1,115 @@
+<div class="container">
+  <div fxLayout="column wrap">
+    <mat-toolbar fxFlex="100">
+      <span>Evaluación #1</span>
+    </mat-toolbar>
+
+    <div fxFlex="100" fxLayoutAlign="none center" fxLayout="column wrap">
+
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde earum soluta minima ullam totam quis
+        aspernatur, odit nihil obcaecati hic. Voluptas, beatae? Rem voluptatum quisquam adipisci eius ipsam,
+        minus labore!
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde earum soluta minima ullam totam quis
+        aspernatur, odit nihil obcaecati hic. Voluptas, beatae? Rem voluptatum quisquam adipisci eius ipsam,
+        minus labore!
+      </p>
+
+
+      <form fxLayout="row wrap" fxLayoutAlign="start start">
+        <mat-toolbar>
+          <span>Proceso de evaluación</span>
+        </mat-toolbar>
+        <mat-progress-bar mode="determinate" value="10"></mat-progress-bar>
+
+
+
+        <br>
+
+
+        <mat-horizontal-stepper [linear]="isLinear" #stepper fxFlex="100">
+          <mat-step [stepControl]="firstFormGroup">
+            <div [formGroup]="firstFormGroup" fxLayout="row wrap">
+              <ng-template matStepLabel>Fill out your address</ng-template>
+              <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" fxFlex="100">
+
+                <ng-container matColumnDef="Pregunta">
+                  <th mat-header-cell *matHeaderCellDef>Pregunta</th>
+                  <td mat-cell *matCellDef="let element"> {{element.Pregunta}}
+                  </td>
+                </ng-container>
+
+                <ng-container matColumnDef="Siempre">
+                  <th mat-header-cell *matHeaderCellDef>Siempre</th>
+                  <td mat-cell *matCellDef="let element">
+                    <mat-radio-button value="{{element.Siempre}}"></mat-radio-button>
+                  </td>
+                </ng-container>
+
+                <ng-container matColumnDef="CasiSiempre">
+                  <th mat-header-cell *matHeaderCellDef>Casi siempre</th>
+                  <td mat-cell *matCellDef="let element">
+                    <mat-radio-button value="{{element.Siempre}}"></mat-radio-button>
+                  </td>
+                </ng-container>
+
+                <ng-container matColumnDef="AlgunasVeces">
+                  <th mat-header-cell *matHeaderCellDef>Algunas veces </th>
+                  <td mat-cell *matCellDef="let element">
+                    <mat-radio-button value="{{element.AlgunasVeces}}"></mat-radio-button>
+                  </td>
+                </ng-container>
+
+                <ng-container matColumnDef="CasiNunca">
+                  <th mat-header-cell *matHeaderCellDef>Casi nunca </th>
+                  <td mat-cell *matCellDef="let element">
+                    <mat-radio-button value="{{element.CasiNunca}}"></mat-radio-button>
+                  </td>
+                </ng-container>
+
+                <ng-container matColumnDef="Nunca">
+                  <th mat-header-cell *matHeaderCellDef>Nunca</th>
+                  <td mat-cell *matCellDef="let element">
+                    <mat-radio-button value="{{element.Nunca}}"></mat-radio-button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="headerSurvey"></tr>
+                <tr mat-row *matRowDef="let row; columns: headerSurvey;"></tr>
+              </table>
+              <div>
+                <p>
+                  <button mat-flat-button color="primary" fxFlex="100" fxFlex.sm="100" fxFlex.xs="100"
+                    matTooltip="Continuar con la evaluación" aria-label="Continuar con la evaluación"
+                    matStepperNext>Siguiente</button>
+                </p>
+              </div>
+            </div>
+          </mat-step>
+          <mat-step [stepControl]="secondFormGroup">
+            <form [formGroup]="secondFormGroup">
+              <ng-template matStepLabel>Fill out your address</ng-template>
+              <mat-form-field>
+                <input matInput placeholder="Address" formControlName="secondCtrl" required>
+              </mat-form-field>
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+          <mat-step>
+            <ng-template matStepLabel>Done</ng-template>
+            You are now done.
+            <div>
+              <button mat-button matStepperPrevious>Back</button>
+              <button mat-button (click)="stepper.reset()">Reset</button>
+            </div>
+          </mat-step>
+        </mat-horizontal-stepper>
+
+      </form>
+
+    </div>
+  </div>
+</div>

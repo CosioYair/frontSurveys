@@ -1,0 +1,13 @@
+<div class="card">
+    <div class="card-header">
+        <h5>Actualizar seccion</h5>
+    </div>
+    <div *ngIf="surveySection.Oid && surveySection.Questions" class="card-body">
+        <app-edit-surveySection *ngIf="surveySection" [surveySection]="surveySection" (surveySectionUpdated)="surveySectionUpdated($event)">
+        </app-edit-surveySection>
+        <button (click)="update()" mat-stroked-button color="accent" class="btn-block"
+            [disabled]="!validForm">Actualizar</button>
+        <app-back-error-list [errors]="backErrors"></app-back-error-list>
+        <app-success-box *ngIf="surveySectionUpdatedFlag" message="Seccion actualizada"></app-success-box>
+    </div>
+</div>

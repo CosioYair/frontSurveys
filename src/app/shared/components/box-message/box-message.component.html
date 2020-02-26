@@ -1,0 +1,6 @@
+<div [class]="boxClass">
+    <div *ngFor="let message of messages" fxLayoutAlign="start center">
+        <mat-icon mat-list-icon>{{ message.icon }}</mat-icon>
+        <p>{{ message.text }}</p>
+    </div>
+</div>

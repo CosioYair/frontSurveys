@@ -1,0 +1,15 @@
+<div class="container-fluid">
+        <div class="col-12">
+            <p>Detalla el nombre de tu formulario, ingresa las catégorias o estructura que tendrá el mismo</p>
+            <app-success-box *ngIf="itemUpdated" message="Registro actualizado"></app-success-box>
+            <form [formGroup]="form">
+                <div class="form-group">
+                    <input class="form-control" placeholder="Título de tu cuestionario" formControlName="title">
+                    <div *ngIf="form.controls['title'].invalid && form.controls['title'].touched">Ingresa el titulo de tu
+                        formulario</div>
+                </div>
+                <app-back-error-list [errors]="backErrors"></app-back-error-list>
+                <button (click)="update()" class="btn btn-block btn-primary" [disabled]="!form.valid">Actualizar</button>
+            </form>
+        </div>
+    </div>

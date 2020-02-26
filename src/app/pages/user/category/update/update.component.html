@@ -1,0 +1,13 @@
+<div class="card">
+    <div class="card-header">
+        <h5>Actualizar categoria</h5>
+    </div>
+    <div class="card-body">
+        <app-edit-category *ngIf="category" [category]="category" (categoryUpdated)="categoryUpdated($event)">
+        </app-edit-category>
+        <button (click)="update()" mat-stroked-button color="accent" class="btn-block"
+            [disabled]="!validForm">Actualizar</button>
+        <app-back-error-list [errors]="backErrors"></app-back-error-list>
+        <app-success-box *ngIf="categoryUpdatedFlag" message="Categoria actualizada"></app-success-box>
+    </div>
+</div>

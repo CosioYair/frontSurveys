@@ -1,0 +1,19 @@
+<form [formGroup]="form" fxLayout="column" fxLayoutAlign="none center">
+    <mat-form-field>
+        <input matInput placeholder="Pregunta" formControlName="title">
+        <mat-error *ngIf="form.controls['title'].invalid && form.controls['title'].touched">
+            Campo requerido
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Tipo de respuesta</mat-label>
+        <mat-select formControlName="answerTypeId">
+            <mat-option *ngFor="let answerType of answerTypes" [value]="answerType.id">
+                {{ answerType.title }}
+            </mat-option>
+        </mat-select>
+        <mat-error *ngIf="form.controls['answerTypeId'].invalid && form.controls['answerTypeId'].touched">
+            Campo requerido
+        </mat-error>
+    </mat-form-field>
+</form>

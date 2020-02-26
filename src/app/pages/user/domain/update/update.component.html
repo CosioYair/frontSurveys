@@ -1,0 +1,13 @@
+<div class="card">
+    <div class="card-header">
+        <h5>Actualizar dominio</h5>
+    </div>
+    <div class="card-body">
+        <app-edit-domain *ngIf="domain" [domain]="domain" (domainUpdated)="domainUpdated($event)">
+        </app-edit-domain>
+        <button (click)="update()" mat-stroked-button color="accent" class="btn-block"
+            [disabled]="!validForm">Actualizar</button>
+        <app-back-error-list [errors]="backErrors"></app-back-error-list>
+        <app-success-box *ngIf="domainUpdatedFlag" message="Dominio actualizado"></app-success-box>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="container-fluid">
+  <div class="page-header">
+    <div class="row">
+      <div class="col-12">
+        <div class="page-header-left">
+          <h3>{{title}}</h3>
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a routerLink="/">
+                <app-feather-icons [icon]="'home'"></app-feather-icons>
+              </a>
+            </li>
+            <li *ngFor="let breadcrumb of breadcrumbs" class="breadcrumb-item">
+              <a [routerLink]="breadcrumb.path">
+                {{ breadcrumb.title }}
+              </a>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

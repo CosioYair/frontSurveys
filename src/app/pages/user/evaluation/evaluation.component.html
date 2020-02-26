@@ -1,0 +1,53 @@
+<mat-card fxLayout="column wrap" fxLayoutAlign="center start">
+  <mat-card-header>
+      <div  mat-card-avatar class="example-header-image"></div>
+      <mat-card-title><h1>Evaluación {{evaluation.name}}</h1></mat-card-title>
+      <mat-card-subtitle>{{evaluation.user}}</mat-card-subtitle>
+  </mat-card-header>
+  <!-- <img mat-card-image class="image-sm" src="./assets/images/BitPeople-sm.png" alt="BitPeople"> -->
+  <mat-card-content>
+      <p>
+          {{evaluation.description}}
+      </p>
+      <p>
+          Progreso de tu evaluación: {{evaluation.progress|percent}}
+          <mat-progress-bar mode="determinate" value="{{evaluation.progress}}"></mat-progress-bar>
+          <br>
+      </p>
+
+          <b>ANTES DE INICIAR EL LLENADO LEER COMPLETAMENTE LAS SIGUIENTES</b>
+          <br>
+          <h3>INSTRUCCIONES:</h3>
+          <p class="instructions">
+          El objetivo de la presente aplicación es identificar, prevenir y evitar factores de riesgo
+          psicosocial en el entorno laboral. Antes de iniciar deberá asegurarse de contar con el
+          equipo, mobiliario e instalaciones adecuadas.<br><br>
+          Cada cuestionario deberá ser respondido en su TOTALIDAD, por lo tanto asegúrese
+          de informar a su superior inmediato que fue seleccionado para tal tarea, esto para
+          evitar en medida de lo posible, sea interrumpido y se enfoque en concluirlo de acuerdo
+          a lo requerido por la NOM-035-STPS-2018 el inciso 6 Obligaciones de los
+          trabajadores.<br><br>
+          No existen respuestas correctas o incorrectas, considere para tal fin los últimos dos
+          meses, lo más importante es contar con su opinión, por lo tanto, solo concéntrese en
+          responder con sinceridad.<br><br>
+          Es importante enfatizar que, la privacidad y confidencialidad del manejo de datos y el
+          uso de información aquí proporcionada, será exclusivamente con fines de mejora del
+          ambiente laboral.<br><br>
+          Si tiene alguna duda acérquese al responsable de Personal y le será brindado el
+          apoyo requerido.
+      </p>
+
+      <p fxLayoutAlign="center center">
+              <a mat-flat-button color="primary"  routerLink="/user/evaluation/employeeInfo"
+              matTooltip="Al dar click en éste botón, aceptas los criterios mencionados anteriormente e iniciarás la evaluación"
+              aria-label="Al dar click en éste botón, aceptas los criterios mencionados anteriormente e iniciarás la evaluación"
+              >Acepto e iniciar evaluación
+                      <i class="material-icons">
+                              touch_app
+                              </i>
+                          </a>
+      </p>
+  </mat-card-content>
+  <mat-card-actions>
+  </mat-card-actions>
+</mat-card>

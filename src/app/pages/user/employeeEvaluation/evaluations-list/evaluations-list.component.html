@@ -1,0 +1,19 @@
+<div class="card">
+    <div class="card-header">
+        <h5>Evaluaciones habilitadas</h5>
+    </div>
+    <div class="card-body">
+        <mat-list>
+            <mat-list-item *ngFor="let evaluation of evaluations">
+                <mat-icon mat-list-icon>assignment_ind</mat-icon>
+                <h4 mat-line>{{ evaluation.survey ? evaluation.survey.title : '' }}</h4>
+                <p mat-line> Fecha de requisición: {{ evaluation.createdAt | date }} </p>
+                <span>40%</span>
+                <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+            </mat-list-item>
+        </mat-list>
+        <app-box-message *ngIf="evaluations.length === 0" fxFlexFill
+            [messages]="[{text:'No hay evaluaciones habilitadas', icon: 'error'}]" boxClass="warning">
+        </app-box-message>
+    </div>
+</div>

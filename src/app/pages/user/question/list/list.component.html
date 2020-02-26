@@ -1,0 +1,50 @@
+<div class="card">
+    <div class="card-header">
+        <h5>Lista de preguntas</h5>
+    </div>
+    <div class="card-body">
+        <form>
+            <div class="form-group form-inline">
+                Buscar: <input class="form-control ml-2" type="text" name="searchTerm" [formControl]="filter" />
+            </div>
+
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th *ngFor="let column of displayedColumns" scope="col" (sort)="onSort($event)">
+                            {{ column.title }}</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let question of (questions$ | async); let i = index">
+                        <th scope="row">{{ i + 1 }}</th>
+                        <td>
+                            <ngb-highlight [result]="question.title"></ngb-highlight>
+                        </td>
+                        <td>
+                            <ngb-highlight [result]="question.answerTypeTitle"></ngb-highlight>
+                        </td>
+                        <td>
+                            <button *ngxPermissionsOnly="['UE']"
+                                [routerLink]="['/user/question/update', question.Oid]" mat-icon-button>
+                                <mat-icon>edit</mat-icon>
+                            </button>
+                            <button *ngxPermissionsOnly="['DE']" (click)="delete(question.Oid)" mat-icon-button>
+                                <mat-icon>delete</mat-icon>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="d-flex justify-content-between p-2">
+                <ngb-pagination [collectionSize]="total" [(page)]="page" [pageSize]="pageSize"
+                    (pageChange)="pagination($event)">
+                </ngb-pagination>
+            </div>
+
+        </form>
+    </div>
+</div>

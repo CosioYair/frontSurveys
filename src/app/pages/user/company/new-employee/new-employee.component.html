@@ -1,0 +1,159 @@
+<div class="card">
+    <div class="card-header">
+        <h5>Alta de empleado</h5>
+    </div>
+    <div class="card-body">
+        <form [formGroup]="form" fxLayout="row wrap" fxLayoutAlign="space-around start">
+            <mat-form-field>
+                <input matInput placeholder="Nombre de usuario" formControlName="tagName">
+                <mat-error *ngIf="form.controls['tagName'].invalid && form.controls['tagName'].touched">
+                    Ingresa un nombre de usuario valido
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Correo" formControlName="email">
+                <mat-error *ngIf="form.controls['email'].invalid && form.controls['email'].touched">
+                    Ingresa un correo electrónico valido
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Rol</mat-label>
+                <mat-select formControlName="roleId">
+                    <mat-option *ngFor="let role of roles" [value]="role.id">
+                        {{ role.name }}
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="form.controls['roleId'].invalid && form.controls['roleId'].touched">
+                    Campo requerido
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Nombre completo" formControlName="fullName">
+                <mat-error *ngIf="form.controls['fullName'].invalid && form.controls['fullName'].touched">
+                    Ingresa un nombre valido
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Sexo</mat-label>
+                <mat-select formControlName="genderId">
+                    <mat-option *ngFor="let gender of genders" [value]="gender.id">
+                        {{ gender.name }}
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="form.controls['genderId'].invalid && form.controls['genderId'].touched">
+                    Campo requerido
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Estado civil</mat-label>
+                <mat-select formControlName="civilStatusId">
+                    <mat-option *ngFor="let civilStatus of civilStatuses" [value]="civilStatus.id">
+                        {{ civilStatus.name }}
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="form.controls['civilStatusId'].invalid && form.controls['civilStatusId'].touched">
+                    Campo requerido
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Nivel de estudio</mat-label>
+                <mat-select formControlName="studyLevelId">
+                    <mat-option *ngFor="let studyLevel of studyLevels" [value]="studyLevel.id">
+                        {{ studyLevel.name }}
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="form.controls['studyLevelId'].invalid && form.controls['studyLevelId'].touched">
+                    Campo requerido
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Titulo de puesto" formControlName="position">
+                <mat-error *ngIf="form.controls['position'].invalid && form.controls['position'].touched">
+                    Campo requerido
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input type="number" min="13" matInput placeholder="Edad" formControlName="age">
+                <mat-error *ngIf="form.controls['age'].invalid && form.controls['age'].touched">
+                    Campo requerido
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Tipo de puesto</mat-label>
+                <mat-select formControlName="positionTypeId">
+                    <mat-option *ngFor="let positionType of positionTypes" [value]="positionType.id">
+                        {{ positionType.name }}
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="form.controls['positionTypeId'].invalid && form.controls['positionTypeId'].touched">
+                    Campo requerido
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Tipo de contrato</mat-label>
+                <mat-select formControlName="contractTypeId">
+                    <mat-option *ngFor="let contractType of contractTypes" [value]="contractType.id">
+                        {{ contractType.name }}
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="form.controls['contractTypeId'].invalid && form.controls['contractTypeId'].touched">
+                    Campo requerido
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Tipo de personal</mat-label>
+                <mat-select formControlName="staffTypeId">
+                    <mat-option *ngFor="let staffType of staffTypes" [value]="staffType.id">
+                        {{ staffType.name }}
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="form.controls['staffTypeId'].invalid && form.controls['staffTypeId'].touched">
+                    Campo requerido
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Jornada laboral</mat-label>
+                <mat-select formControlName="workingDayTypeId">
+                    <mat-option *ngFor="let workingDayType of workingDayTypes" [value]="workingDayType.id">
+                        {{ workingDayType.name }}
+                    </mat-option>
+                </mat-select>
+                <mat-error
+                    *ngIf="form.controls['workingDayTypeId'].invalid && form.controls['workingDayTypeId'].touched">
+                    Campo requerido
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Rotecion</mat-label>
+                <mat-select formControlName="rotation">
+                    <mat-option [value]="true">Si</mat-option>
+                    <mat-option [value]="false">No</mat-option>
+                </mat-select>
+                <mat-error *ngIf="form.controls['rotation'].invalid && form.controls['rotation'].touched">
+                    Campo requerido
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input type="number" matInput placeholder="Años de experiencia" formControlName="experienceYears">
+                <mat-error *ngIf="form.controls['experienceYears'].invalid && form.controls['experienceYears'].touched">
+                    Campo requerido
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput [matDatepicker]="dpExperience" placeholder="Fecha de inicio en el puesto"
+                    formControlName="positionStartDate" disabled="true">
+                <mat-datepicker-toggle matSuffix [for]="dpExperience"></mat-datepicker-toggle>
+                <mat-datepicker #dpExperience disabled="false"></mat-datepicker>
+                <mat-error
+                    *ngIf="form.controls['positionStartDate'].invalid && form.controls['positionStartDate'].touched">
+                    Campo requerido
+                </mat-error>
+            </mat-form-field>
+            <div fxFlex="100" fxLayout="column" fxLayoutAlign="center center">
+                <app-back-error-list [errors]="backErrors"></app-back-error-list>
+                <app-success-box *ngIf="employeeCreated" message="Registro creado"></app-success-box>
+                <button (click)="create()" mat-stroked-button color="accent" [disabled]="!form.valid">Crear</button>
+            </div>
+        </form>
+    </div>
+</div>

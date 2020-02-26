@@ -1,0 +1,13 @@
+<div class="card">
+    <div class="card-header">
+        <h5>Actualizar dimensión</h5>
+    </div>
+    <div class="card-body">
+        <app-edit-dimension *ngIf="dimension" [dimension]="dimension" (dimensionUpdated)="dimensionUpdated($event)">
+        </app-edit-dimension>
+        <button (click)="update()" mat-stroked-button color="accent" class="btn-block"
+            [disabled]="!validForm">Actualizar</button>
+        <app-back-error-list [errors]="backErrors"></app-back-error-list>
+        <app-success-box *ngIf="dimensionUpdatedFlag" message="Dimensión actualizada"></app-success-box>
+    </div>
+</div>

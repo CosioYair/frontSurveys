@@ -1,0 +1,6 @@
+<mat-list>
+    <mat-list-item *ngFor="let error of errors">
+        <mat-icon mat-list-icon>error</mat-icon>
+        <p mat-line>{{ error.Field ? shared.backendErrors[error.Code](error.Field) : shared.backendErrors[error.Code] }}</p>
+    </mat-list-item>
+</mat-list>

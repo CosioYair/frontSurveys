@@ -1,0 +1,290 @@
+<!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"    type="text/css" /> -->
+
+<div fxLayout="column wrap">
+
+
+    <div fxFlex="100" fxLayoutAlign="none start" fxLayout="row wrap" class="bannerNom35">
+
+
+        <div class="contentBanner firstBanner" fxFlex="50" fxFlex.xs="100">
+
+            <img src="/assets/images/BitPeople-sm.png">
+            <br>
+            <h1>Cumple con la NOM-035 y evita:</h1>
+
+            <ul>
+                <li>Factores de riesgos psicosociales. </li>
+                <li>Entorno laboral desfavorable.</li>
+                <li>Violencia laboral.</li>
+            </ul>
+            <p>
+                ** Aplica tus evaluaciones en tiempo y forma.
+            </p>
+        </div>
+        <div class=" contentBanner" fxFlex="50" fxFlex.xs="100">
+
+            Crea un entorno laboral favorable.<br>
+            <form class="example-form">
+
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Nombre y Apellido" value="Alan">
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Empresa" value="BitPeople">
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Correo electrónico" value="tumail@mail.com">
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Teléfono" value="555-555-5555">
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Nro. Colaboradores" value="50">
+                </mat-form-field>
+
+
+            </form>
+
+            <a mat-raised-button color="primary" matTooltip="Cotiza" routerLink="/user/evaluation/list"
+                aria-label="Cotiza para obtener el paquete de NOM35">Solicita tu cotización ahora
+                <mat-icon>how_to_vote</mat-icon></a>
+            <br>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <div fxFlex="50" fxLayout="row wrap" fxLayoutAlign="space-between start" class="container">
+        <h4 fxFlex="1 1 100%" color="primary">Un Entorno idóneo en 4 sencillos pasos</h4>
+        <mat-horizontal-stepper #stepper>
+            <mat-step [stepControl]="firstFormGroup">
+                <form>
+                    <ng-template matStepLabel>Identificación</ng-template>
+
+                    <p>Define el número de colaboradores que posee la organización para saber que evaluación
+                        evaluaciones apliquen. </p>
+
+                    <p>
+                        De 1 a 15 empleados:
+                    </p>
+                    <ul>
+                        <li>
+
+                            Violencia Laboral
+                        </li>
+                    </ul>
+                    <p>
+
+                        De 16 a 50 empleados:
+                    </p>
+                    <ul>
+                        <li>
+
+                            Violencia laboral
+                        </li>
+                        <li>
+
+                            Factores de riesgo psicosociales
+                        </li>
+                    </ul>
+
+                    <p>
+                        De 51 empleados en adelante
+
+                    </p>
+                    <ul>
+                        <li>
+
+                            Violencia laboral
+                        </li>
+                        <li>
+
+                            Factores de riesgo psicosociales
+                        </li>
+                        <li>
+                            Entorno organizacional
+
+                        </li>
+                    </ul>
+
+
+
+
+                </form>
+            </mat-step>
+            <mat-step [stepControl]="secondFormGroup">
+                <form>
+                    <ng-template matStepLabel>Evaluación</ng-template>
+                    <p>Notifica a los colaboradores vía correo electrónico o mensaje sobre la o las evaluaciones
+                        que debe realizar, recordando que la opinión de cada colaborador es valiosa,
+                        confidencial y anónima</p>
+                    <p>Violencia laboral</p>
+                    <ul>
+                        <li>Acontecimiento traumático severo</li>
+                        <li>Recuerdos persistentes sobre el acontecimiento</li>
+                        <li>Esfuerzo por evitar circunstancias parecidas o asociadas al acontecimiento</li>
+                        <li>Afectación</li>
+                    </ul>
+
+                    <p>
+
+                        Factores de riesgo psicosociales
+                    </p>
+                    <ul>
+                        <li>Condiciones en el ambiente de trabajo</li>
+                        <li>Cargas de trabajo</li>
+                        <li>Falta de control sobre el trabajo</li>
+                        <li>Jornadas de trabajo y rotación de turnos</li>
+                        <li>Interferencia en la relación trabajo – familia</li>
+                        <li>Liderazgo negativo y relaciones negativas en el trabajo</li>
+                    </ul>
+
+                    <p>
+                        Entorno Organizacional.
+
+                    </p>
+                    <ul>
+                        <li>Sentido de pertenencia a la empresa</li>
+                        <li>Formación adecuada para la realización de tareas</li>
+                        <li>Definición precisa de responsabilidades para los trabajadores</li>
+                        <li>Participación proactiva y comunicación entre el patrón, sus representantes y
+                            trabajadores</li>
+                        <li>Distribución adecuada de cargas de trabajo con jornadas laborales regulares</li>
+                        <li>Evaluación y reconocimiento del desempeño</li>
+
+                    </ul>
+
+
+
+                </form>
+            </mat-step>
+            <mat-step [stepControl]="thirdFormGroup">
+                <form>
+
+                    <ng-template matStepLabel>Resultados </ng-template>
+                    <p>Descarga en tiempo real de los resultados obtenidos de la o las evaluaciones mediante
+                        reportes de información clave para la toma de decisiones con un clic, segmentados de manera
+                        sencilla por categoría, dimensión o de manera general. </p>
+                </form>
+
+            </mat-step>
+
+            <mat-step [stepControl]="fourthFormGroup">
+                <ng-template matStepLabel>Acciones </ng-template>
+                <form>
+
+
+                    <p>Plan de acción en el clima laboral.</p>
+                    <ul>
+                        <li>Acciones puntuales con las mejores prácticas y recomendaciones para los colaboradores,
+                            que permitan mejorar los indicadores del ambiente laboral.</li>
+                    </ul>
+
+                    <p>Plan de acción de Factores de Riesgo Psicosociales.</p>
+                    <ul>
+                        <li>
+                            Acciones puntuales con las mejores prácticas que ayuden a prevenir los Factores de
+                            Riesgo Psicosociales para implementar como estrategia.
+                        </li>
+                    </ul>
+
+                    <p>Políticas y difusión.</p>
+                    <ul>
+                        <li>
+
+                            Elaboración y difusión de políticas de prevención así como todos aquellos instrumentos
+                            informativos que establece la nom-35
+                        </li>
+                    </ul>
+
+
+
+                </form>
+
+            </mat-step>
+        </mat-horizontal-stepper>
+    </div>
+
+
+
+
+    <div class="container-fluid" style="padding-bottom: 40px" class="container">
+
+
+
+        <div class="top-controls-container" fxFlex="1 1 100%" fxLayout="row wrap" fxLayoutAlign="space-between start">
+            <div class="flex-flow-container" fxFlex.xl="70%" fxLayout="row wrap" fxLayoutAlign="center center">
+                <h4 fxFlex="1 1 100%" color="primary">Crea ahora mismo un entorno organizacional favorable, libre de
+                    violencia y de riesgos de factores psicosociales</h4>
+                <h5 fxFlex="1 1 100%" color="secondary">¡Nosotros e apoyamos!</h5>
+
+
+
+                <div class="direction-container" fxFlex="1 1 100%">
+                    <p>Las Normas Oficiales Mexicanas que emite la Secretaría del Trabajo y Previsión
+                        Social determinan
+                        las
+                        condiciones mínimas necesarias en materia de seguridad, salud y medio ambiente
+                        de trabajo, a
+                        efecto
+                        de prevenir accidentes y enfermedades laborales.</p>
+                    <p>La NOM 035 tiene como objetivo establecer los elementos para identificar,
+                        analizar y prevenir los
+                        factores de riesgo psicosocial, así como para promover un entorno organizacional
+                        favorable en
+                        los
+                        centros de trabajo.</p>
+                    <p>De acuerdo con el campo de aplicación, la NOM 035 rige en todo el territorio
+                        nacional y aplica en
+                        todos los centros de trabajo. Sin embargo, las disposiciones de esta norma
+                        aplican de acuerdo
+                        con el
+                        número de trabajadores que laboran en el centro de trabajo. Derivado de lo
+                        anterior, existen
+                        tres
+                        niveles:
+                    </p>
+                    <mat-list>
+                        <h3 mat-subheader>Centros de trabajo donde laboran</h3>
+                        <mat-list-item>
+                            <mat-icon mat-list-icon>person</mat-icon><span>Hasta 15 trabajadores</span>
+                        </mat-list-item>
+                        <mat-list-item>
+                            <mat-icon mat-list-icon>person_outline</mat-icon><span>Entre 16 y 50
+                                trabajadores</span>
+                        </mat-list-item>
+                        <mat-list-item>
+                            <mat-icon mat-list-icon>person_add</mat-icon><span>Más de 50
+                                trabajadores.</span>
+                        </mat-list-item>
+                    </mat-list>
+                    <div fxLayout="row" fxLayoutAlign="end center">
+                        <a mat-raised-button color="primary" matTooltip="Da de alta tu empresa"
+                            routerLink="/evaluations"
+                            aria-label="Solicitaremos datos de tu empresa para que empieces a realizar las evaluaciones NOM 35">Empezar
+                            <mat-icon>navigate_next</mat-icon></a>
+                    </div>
+                </div>
+            </div>
+            <div class="items-controls-container" fxFlex.xl="30%" fxLayout="column" fxLayoutAlign="center center">
+                <img src="https://www.bitpeople.com.mx/assets/img/logo.png">
+                <p>Fuente: <a
+                        href="https://www.gob.mx/stps/articulos/norma-oficial-mexicana-nom-035-stps-2018-factores-de-riesgo-psicosocial-en-el-trabajo-identificacion-analisis-y-prevencion"
+                        target="_blank">Gob.Mx</a></p>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+    <app-prices></app-prices>
+    <app-contact></app-contact>

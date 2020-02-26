@@ -1,0 +1,43 @@
+<div class="container-fluid p-0 auth-bg">
+  <div class="authentication-main">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="auth-innerright">
+          <div class="authentication-box">
+            <div class="text-center"><img src="assets/images/rscLogoWeb.png" alt=""></div>
+            <div class="card mt-4">
+              <div class="card-body">
+                <div class="text-center">
+                  <h4>Inicio de sesión</h4>
+                  <h6>Ingresa tu correo y contraseña</h6>
+                </div>
+                <form [formGroup]="form" fxLayout="column" fxLayoutAlign="none center">
+                  <mat-form-field>
+                    <input matInput placeholder="Correo" formControlName="email">
+                    <mat-error *ngIf="form.controls['email'].invalid && form.controls['email'].touched">
+                      Ingresa un correo electrónico valido
+                    </mat-error>
+                  </mat-form-field>
+                  <mat-form-field>
+                    <input type="password" matInput placeholder="Contraseña" formControlName="password">
+                    <mat-error *ngIf="form.controls['password'].invalid && form.controls['password'].touched">
+                      La longitud mínima es de 6 caracteres
+                    </mat-error>
+                  </mat-form-field>
+                  <app-back-error-list [errors]="backErrors"></app-back-error-list>
+                  <div class="options" fxLayout="100" fxLayoutAlign="space-around center">
+                    <button mat-button routerLink="signup">Registrate</button>
+                    <button mat-button routerLink="forgot-password">¿Olvidaste tu contraseña?</button>
+                  </div>
+                  <button (click)="login()" mat-stroked-button color="accent" class="btn-block"
+                    [disabled]="!form.valid">Iniciar
+                    de sesión</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

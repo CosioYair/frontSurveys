@@ -1,0 +1,23 @@
+mat-grid-tile {
+  background: lightblue;
+}
+
+
+$table-header: #1976D2;
+$table-header-border: #1565C0;
+$table-border: #d9d9d9;
+.flex-table {
+display: flex;
+flex-flow: row wrap;
+border-left: solid 1px $table-border;
+transition: 0.5s;
+&:first-of-type {
+  border-top: solid 1px $table-header-border;
+  border-left: solid 1px $table-header-border;
+}
+&:first-of-type .flex-row {
+  background: $table-header;
+  color: white;
+  border-color: $table-header-border;
+}
+}

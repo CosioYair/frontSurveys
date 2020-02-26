@@ -1,0 +1,13 @@
+<div class="card">
+    <div class="card-header">
+        <h5>Crear dominio</h5>
+    </div>
+    <div class="card-body">
+        <app-edit-domain #editComponent (domainUpdated)="domainUpdated($event)">
+        </app-edit-domain>
+        <button (click)="create()" mat-stroked-button color="accent" class="btn-block"
+            [disabled]="!validForm">Crear</button>
+        <app-back-error-list [errors]="backErrors"></app-back-error-list>
+        <app-success-box *ngIf="domainCreated" message="Dominio creado"></app-success-box>
+    </div>
+</div>
