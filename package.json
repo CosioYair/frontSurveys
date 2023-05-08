@@ -68,7 +68,7 @@
     "feather-icons": "^4.25.0",
     "firebase": "^6.0.2",
     "flatpickr": "^4.5.7",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "jwt-decode": "^2.2.0",
     "knob": "^1.1.0",
     "leaflet": "^1.4.0",
